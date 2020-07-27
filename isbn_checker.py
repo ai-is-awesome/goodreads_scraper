@@ -27,5 +27,3 @@ def file_contains_isbn(isbn, file_path, file_format, isbn_column_name):
 
 
 
-
-

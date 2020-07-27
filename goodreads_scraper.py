@@ -2,6 +2,8 @@ from requests_module import Request
 import exceptions
 from bs4 import BeautifulSoup
 import requests
+import pandas as pd
+
 # For debugging delete it later
 bs = BeautifulSoup
 
@@ -75,7 +77,7 @@ class GoodReadsScraper:
         D = {'title' : title, 'average_rating' : average_rating, 'total_ratings' : total_ratings, 'authors' : authors_str}
         D.update(genres_dict)
         results.append(D)
-        return results
+        return pd.DataFrame(results)
     
     
     
@@ -95,10 +97,6 @@ class GoodReadsScraper:
             
 test_isbn = '9780786108619'
 scraper = GoodReadsScraper(test_isbn)
-
-
-
-
 
 
 

@@ -9,19 +9,15 @@ from isbn_checker import file_contains_isbn
 from goodreads_scraper import GoodReadsScraper
 
 
-
+######################## Fill the details below and run main() to start the program#############################
 FILE_PATH = 'isbn.xlsx'
 ISBN_COLUMN_NAME = 'ISBN'
 
 # csv or xlsx
 FILE_FORMAT = 'xlsx'
 
+
 ISBN = '9781472367259'
-ISBN = input('Enter ISBN number: ')
-test1 = '9780070196834'
-test2 = ''
-
-
 
 
 
@@ -38,7 +34,9 @@ def main():
         return None
     
 
-csv_has_isbn = file_contains_isbn(ISBN, FILE_PATH, FILE_FORMAT, ISBN_COLUMN_NAME)
+#csv_has_isbn = file_contains_isbn(ISBN, FILE_PATH, FILE_FORMAT, ISBN_COLUMN_NAME)
+
+
 
 
 
