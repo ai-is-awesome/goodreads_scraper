@@ -55,12 +55,18 @@ class GoodReadsScraper:
         title = title.text.strip('\n ') if title else None
 
         authors_div = soup.find('div', attrs = {'id' : 'bookAuthors'})
-        authors = authors_div.find_all('span', attrs = {'itemprop' : 'name'})
+        authors = authors_div.find_all('span', attrs = {'itemprop' : 'name'}) if authors_div else None
         authors_str = ''
-        for i in range(len(authors)):
-            text = authors[i].text if authors[i] else None
-            if text:
-                authors_str += text + ';'
+        
+        if authors:
+            for i in range(len(authors)):
+                text = authors[i].text if authors[i] else None
+                if text:
+                    authors_str += text + ';'
+        
+        else:
+            authors_str = 'Not Found'
+        
                 
 
         average_rating = soup.find('span', attrs = {'itemprop' : 'ratingValue'}).text.strip('\n ') if soup.find('span', attrs = {'itemprop' : 'ratingValue'}) else None
